@@ -34,7 +34,7 @@ The player is then asked to guess again.
 7. If the player guesses correctly at any point, they are congratulated and the game prompts the player if they would like to play again.
 
 ## Example of Losing Playthrough
-![Lose](game_lost.png?raw=true)
+![Lose](images/game_lost.png?raw=true)
 
 ## Example of Winning Playthrough
-![Win](game_win.png?raw=true)
+![Win](images/game_win.png?raw=true)
