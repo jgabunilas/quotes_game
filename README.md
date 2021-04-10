@@ -1,7 +1,7 @@
 # Quotes Game
 A quote guessing game showcasing webscraping, HTML requests, and game logic.
 
-This exercise is a coding challenge that is part of [The Modern Python 3 Bootcamp](https://www.udemy.com/course/the-modern-python3-bootcamp/) course taught by Colt Steel.
+This exercise is a coding challenge that is part of [The Modern Python 3 Bootcamp](https://www.udemy.com/course/the-modern-python3-bootcamp/) course taught by Colt Steele.
 
 The exercise utilizes the **BeautifulSoup** webscraping library to obtain famous (or not-so-famous) quotes from the website [Quotes To Scrape](http://quotes.toscrape.com/). The quotes are collected and used in a guessing game in which the player attempts to guess the author of the quote. They player has a total of 4 attempts to correctly guess the author, with a hint provided after each incorrect guess. 
 
