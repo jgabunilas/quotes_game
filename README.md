@@ -13,21 +13,22 @@ The Quotes to Scrape website is updated regularly and typically contains 10 quot
 ## Webscraping Quote Information
 
 Next, the program loops through the list of gathered URLs and proceeds to scrape each page for the quote text, the author's name, and the link to the author's biography. 
-* Each quote is self-contained with an HTML element of the class `quote`. Using BeautifulSoup, we find all `quote` classes on the page, then dig in to that object to obtain the desired information.
+* Each quote is self-contained within an HTML element of the class `quote`. Using BeautifulSoup, we find all `quote` classes on the page, then dig in to that object to obtain the desired information.
 * The text of the quote is within a child element of the `quote` class under a class called `text`. It can be obtained with the `get_text()` method.
 * The author of the quote is within a child element of the `quote` class under a class called `author`. This can also be obtained with the `get_text()` method.
-* Finally, the link to the author's bio is within a child anchor `<a>` element, which contains an `href` attribute with the URL. 
-As each quote is scraped, the information is added to a growing list of all quotes. The end result is a list of sub-lists, which each sublist containing the text, author, and biography URL information. 
+* Finally, the link to the author's biography is within a child anchor `<a>` element, which contains an `href` attribute with the URL leading to that author's biography. 
+* As each quote is scraped, the information is added to a growing list of all quotes. The end result is a list of sub-lists, which each sublist containing the text, author, and biography URL information. 
 
 ## Quote Guessing Game
 
 Finally, this information is used to run a guessing game. The game logic proceeds as follows:
 1. The `random` module is used to select a random quote from the list of all quotes assembled during the webscraping section. Once selected, that quote is removed from the list so that it is not re-used should the player decide to play again.
 2. The text of the quote is presented to the player, who must `input` their guess of the author of the quote. The guess is not case-sensitive. 
-3. If the player guesses incorrectly, they are notified as such as the game provides a hint in the form of the author's birthdate and birth place. This information is accessed from the quote that was selected in step **1**. The biography URL is used to make a new HTML request to that URL, and BeautifulSoup is then used to scrape the author birth date and birth location from that URL
+3. If the player guesses incorrectly, they are notified as such and the game provides a hint in the form of the author's birthdate and birth place. This information is accessed from the quote that was selected in step **1**. To present this information, the biography URL is used to make a new HTML request to that URL, and BeautifulSoup is then used to scrape the author birth date and birth location from that URL
 * The author's birth date is contained within an element of the class `author-born-date`. The actual text can be obtained using the `get_text()` method.
-* The author's birth location is contained within an element of the class `author-born-location`. The actual text can be obtained using the `get_text()` method.
-The player is then asked to guess again.
+* The author's birth location is contained within an element of the class `author-born-location`. The actual text can be obtained using the `get_text()` method.  
+</br>
+The player is then asked to guess the author again.
 4. If the player guesses incorrectly a second time, they are notified as such and the game provides a hint in the form of the author's *first* initial. This information is likewise accessed from the quote data that was selected in step **1**. The player is then asked to guess again.
 5. If the player guesses incorrectly a third time, they are notified as such and the game provides a hint in the form of the author's *last* initial. This information is likewise accessed from the quote data that was selected in step **1**. The player is then asked to guess a final time.
 6. If the player guesses incorrectly a fourth and final time, the game reveals the author of the quote and prompts the player if they would like to play again.

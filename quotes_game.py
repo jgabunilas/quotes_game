@@ -49,10 +49,10 @@ for page in URLs_to_scrape:
                 # The author is found within a class called "author", which is also within the quote class
                 author = quote.select(".author")[0].get_text()
 
-                # Finally, get the URL for the bio page. This is also within the quote lcass under an anchor tag
+                # Finally, get the URL for the bio page. This is also within the quote class under an anchor tag
                 bio_link = f"http://quotes.toscrape.com{quote.find('a')['href']}"
 
-                # Store the information in a the quotes list, with each quote being a list of the quote, author, and bio link. This will be a list of lists.
+                # Store the collected information in the quotes list, with each quote being a list of the quote, author, and bio link. This will be a list of lists.
                 quotes_list.append([quote_text, author, bio_link])
 
 # print(f"This list contains {len(quotes_list)} quotes.")
