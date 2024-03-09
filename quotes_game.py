@@ -69,7 +69,7 @@ while playing:
         # Initialize the number of guesses
         guesses_remaining = 4
 
-        print("Welcome to Guess the Quote! Your goal is the guess the author of the following quote:")
+        print("Welcome to Guess the Quote! Your goal is to guess the author of the following quote:")
         print(quote[0])
         guess = input(f"Who is the author of this quote?: ")
 
